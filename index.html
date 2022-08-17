@@ -19,14 +19,15 @@
             <a href="#hamburguer">Hamburguers</a>
             <a href="#hotdog">Hot Dog</a>
             <a href="#bebidas">Bebidas</a>
-            <button data-cart><img class="cart" src="src/img/cart.png" alt=""></button>
+            <button data-cart onclick="confirmarValor()"><img class="cart" src="src/img/cart.png" alt=""></button>
         </nav>
     </header>
-    <section class="modalConfirm" data-modalConfirm>
-
-    </section>
-    <section class="modalBase" data-modalBase>
-        <p>Seu pedido tem valor de:</p>
+    <section class="hide" data-modalConfirm>
+        <div class="message">
+            <p>O valor total do seu pedido é </p>
+            <div data-message></div>
+            <button onclick="voltar()">confirmar</button>
+        </div>
     </section>
     <main>
         <section id="hamburguer">
@@ -153,7 +154,7 @@
                 </div>
             </div>
         </section>
-        <button data-final class="final" onclick="valorTotal()">Finalizar Compra</button>
+        <button data-final class="final" onclick="confirmarValor()">Finalizar Compra</button>
     </main>
     <footer>
         &copy;tasty é uma marca de SIM alimeticia Co. 2022. Todos os direitos reservados.

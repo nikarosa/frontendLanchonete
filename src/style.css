@@ -98,6 +98,7 @@ main h6{
     text-transform: uppercase;
     cursor: pointer;
     text-align: right;
+    transition: width .1s ease-in-out .1s;
 }
 .final:hover{
     border: 2px solid #000;
@@ -106,8 +107,50 @@ main h6{
     transition: width .2s;
     background: none;
 }
-.modalBase{
-    
+.modalConfirm{
+    display: flex;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    background-color: #00000090;
+    width: 100vw;
+    height: 100vh;
+}
+.hide{
+    display: none;
+}
+.message{
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 50%;
+    border-radius: 5px;
+    height: 50vh;
+    text-align: center;
+    font-size: 2em;
+    font-family: 'Raleway', sans-serif;
+    background-color: #fec208;
+}
+.message button{
+    background: none;
+    justify-self: center;
+    align-self: center;
+    border: 2px solid #ff2d08;
+    color: #ff2d08;
+    text-transform: uppercase;
+    padding: 1vh;
+    font-size: .7em;
+    width: 20vw;
+    margin: 1vw 1vh;
+    cursor: pointer;
+    transition: width .1s ease-in-out .1s;
+}
+.message button:hover{
+    border: 2px solid #000;
+    color: #000;
+    width: 25vw;
+    transition: width .2s ease-in-out .1s;
 }
 footer{
     display: flex;

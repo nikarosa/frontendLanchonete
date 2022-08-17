@@ -7,11 +7,13 @@ var sucoMara = document.querySelector('[data-sucoMara]')
 var sucoCaja = document.querySelector('[data-sucoCaja')
 var refri = document.querySelector('[data-refri]')
 var heineken = document.querySelector('[data-heineken]')
-var final = document.querySelector('[data-final]')
+var modal = document.querySelector('[data-modalConfirm]')
+var message = document.querySelector('[data-message]')
+var confirm = document.querySelector('[data-confirm]')
 
-function valorTotal() {
+
+function confirmarValor(){
     var somaTotal = 0
-
     if (bomba.checked == true) {
         somaTotal = somaTotal + 9.99
     }
@@ -33,6 +35,17 @@ function valorTotal() {
     if (heineken.checked == true) {
         somaTotal = somaTotal + 8.99
     }
+    console.log(somaTotal)
     
-    console.log(somaTotal);
+    modal.classList.remove("hide")
+    modal.classList.add("modalConfirm")
+
+    message.innerHTML = `R$ ${somaTotal}`
+}
+
+function voltar(){
+    var somaTotal = 0
+
+    modal.classList.remove("modalConfirm")
+    modal.classList.add("hide")
 }
