@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="src/style.css">
-    <script src="src/script.js"></script>
+    <script src="src/script.js" defer></script>
     <link rel="shortcut icon" href="src/img/favicon.png" type="image/x-icon">
     <title>Cardapio | tasty</title>
 </head>
@@ -14,14 +14,20 @@
 <body>
     <header>
         <nav>
-            <a href="#"><img class="logo" src="src/img/icon.png" alt=""></a>
+            <a href="#" class="aLogo"><img class="logo" src="src/img/icon.png" alt=""></a>
             <a href="#">Início</a>
             <a href="#hamburguer">Hamburguers</a>
             <a href="#hotdog">Hot Dog</a>
             <a href="#bebidas">Bebidas</a>
-            <a href=""><button><img class="cart" src="src/img/cart.png" alt=""></button></a>
+            <button data-cart><img class="cart" src="src/img/cart.png" alt=""></button>
         </nav>
     </header>
+    <section class="modalConfirm" data-modalConfirm>
+
+    </section>
+    <section class="modalBase" data-modalBase>
+        <p>Seu pedido tem valor de:</p>
+    </section>
     <main>
         <section id="hamburguer">
             <h6>Hamburguers</h6>
@@ -36,7 +42,7 @@
                     </div>
                 </div>
                 <div  class="subproduto valor">
-                    <input type="checkbox" name="bomba" id="bomba">
+                    <input type="checkbox" name="bomba" id="bomba" data-bomba>
                     <p>R$ 9,99</p>
                 </div>
             </div>
@@ -51,7 +57,7 @@
                     </div>
                 </div>
                 <div class="subproduto valor">
-                    <input type="checkbox" name="frango" id="frango">
+                    <input type="checkbox" name="frango" id="frango" data-frango>
                     <p>R$ 14,99</p>
                 </div>
             </div>
@@ -66,7 +72,7 @@
                         </div>
                 </div>
                 <div class="subproduto valor">
-                    <input type="checkbox" name="artesanal" id="artesanal">
+                    <input type="checkbox" name="artesanal" id="artesanal" data-artesanal>
                     <p>R$ 24,99</p>
                 </div>
             </div>
@@ -84,7 +90,7 @@
                     </div>
                 </div>
                 <div class="subproduto valor">
-                    <input type="checkbox" name="chapa" id="chapa">
+                    <input type="checkbox" name="chapa" id="chapa" data-chapa>
                     <p>R$ 7,99</p>
                 </div>
             </div>
@@ -99,7 +105,7 @@
                     </div>
                 </div>
                 <div class="subproduto valor">
-                    <input type="checkbox" name="molho" id="molho">
+                    <input type="checkbox" name="molho" id="molho" data-molho>
                     <p>R$ 7,99</p>
                 </div>
             </div>
@@ -112,7 +118,7 @@
                     <label for="suco-mara">Suco de Maracujá - 400ml</label>
                 </div>
                 <div class="subproduto valor">
-                    <input type="checkbox" name="suco-mara" id="suco-mara">
+                    <input type="checkbox" name="suco-mara" id="suco-mara" data-sucoMara>
                     <p>R$ 5,99</p>
                 </div>
             </div>
@@ -122,8 +128,8 @@
                     <label for="suco-caja">Suco de Cajá - 400ml</label>
                 </div>
                 <div class="subproduto valor">
-                    <input type="checkbox" name="suco-caja" id="suco-caja">
-                    <p>R$ 4,99</p>
+                    <input type="checkbox" name="suco-caja" id="suco-caja" data-sucoCaja>
+                    <p>R$ 5,99</p>
                 </div>
             </div>
             <div class="produto">
@@ -132,7 +138,7 @@
                     <label for="refri">Refrigerante Lata - 350ml</label>
                 </div>
                 <div class="subproduto valor">
-                    <input type="checkbox" name="refri" id="refri">
+                    <input type="checkbox" name="refri" id="refri" data-refri>
                     <p>R$ 4,99</p>
                 </div>
             </div>
@@ -142,11 +148,12 @@
                     <label for="heineken">Heineken Long Neck - 330ml</label>
                 </div>
                 <div class="subproduto valor">
-                    <input type="checkbox" name="heineken" id="heineken">
+                    <input type="checkbox" name="heineken" id="heineken" data-heineken>
                     <p>R$ 8,99</p>
                 </div>
             </div>
         </section>
+        <button data-final class="final" onclick="valorTotal()">Finalizar Compra</button>
     </main>
     <footer>
         &copy;tasty é uma marca de SIM alimeticia Co. 2022. Todos os direitos reservados.

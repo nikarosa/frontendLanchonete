@@ -32,6 +32,9 @@ header .logo{
     height: 10vh;
     margin-left: 10vw;
 }
+header .aLogo:hover{
+    opacity: 1;
+}
 header .cart{
     height: 5vh;
 }
@@ -39,9 +42,15 @@ header button{
     background: none;
     border: none;
     cursor: pointer;
+    margin-right: 2vw;
+}
+header button:hover{
+    opacity: .6;
 }
 main{
     font-family: 'Raleway', sans-serif;
+    display: flex;
+    flex-direction: column;
     height: auto;
     padding: 5vh;
 }
@@ -78,11 +87,34 @@ main h6{
     gap: 1vw;
     width: 6% !important;
 }
+.final{
+    align-self: flex-end;
+    padding: 1vh;
+    width: 15vw;
+    background: none;
+    border: 2px solid #ff2d08;
+    color: #ff2d08;
+    font-size: 1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    text-align: right;
+}
+.final:hover{
+    border: 2px solid #000;
+    color: #000;
+    width: 20vw;
+    transition: width .2s;
+    background: none;
+}
+.modalBase{
+    
+}
 footer{
     display: flex;
     justify-content: center;
     align-items: center;
     height: 10vh;
+    width: 100%;
     font-family: 'Dancing Script', cursive;
     background-color: #cf240a;
     color: #fff;
