@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/style.css">
+    <script src="src/script.js"></script>
+    <link rel="shortcut icon" href="src/img/favicon.png" type="image/x-icon">
+    <title>Cardapio | tasty</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="#"><img class="logo" src="src/img/icon.png" alt=""></a>
+            <a href="#">Início</a>
+            <a href="#hamburguer">Hamburguers</a>
+            <a href="#hotdog">Hot Dog</a>
+            <a href="#bebidas">Bebidas</a>
+            <a href=""><button><img class="cart" src="src/img/cart.png" alt=""></button></a>
+        </nav>
+    </header>
+    <main>
+        <section id="hamburguer">
+            <h6>Hamburguers</h6>
+            <div class="produto">
+                <div class="subproduto">
+                    <div>
+                        <img src="src/img/xtudo.png" alt="">
+                    </div>
+                    <div>
+                        <label for="bomba">X-Bomba</label>
+                        <p>Pão, 2 Hamburgueres, Bacon, 2 Ovos, Presunto, Mussarela, Alface, Tomate, Cebola, Molho da Casa, Mostarda</p>
+                    </div>
+                </div>
+                <div  class="subproduto valor">
+                    <input type="checkbox" name="bomba" id="bomba">
+                    <p>R$ 9,99</p>
+                </div>
+            </div>
+            <div class="produto">
+                <div class="subproduto">
+                    <div>
+                        <img src="src/img/xfrango.png" alt="">
+                    </div>
+                    <div>
+                        <label for="frango">X-Tudo de Frango</label>
+                        <p>Pão, 2 Files de Frango, Bacon, 2 Ovos, Presunto, Mussarela, Alface, Tomate, Cebola, Molho da Casa, Mostarda</p>
+                    </div>
+                </div>
+                <div class="subproduto valor">
+                    <input type="checkbox" name="frango" id="frango">
+                    <p>R$ 14,99</p>
+                </div>
+            </div>
+            <div class="produto">
+                <div class="subproduto">
+                    <div>
+                        <img src="src/img/artpicanha.png" alt="">
+                    </div>
+                    <div>
+                        <label for="artesanal">Artesanal de Picanha</label>
+                        <p>Pão, 2 Hamburgueres Artesanais de Picanha, Queijo tipo Cheddar, Cebola, Alface, Tomate, Pepino, Bacon</p>
+                        </div>
+                </div>
+                <div class="subproduto valor">
+                    <input type="checkbox" name="artesanal" id="artesanal">
+                    <p>R$ 24,99</p>
+                </div>
+            </div>
+        </section>
+        <section id="hotdog">
+            <h6>HotDog</h6>
+            <div class="produto">
+                <div class="subproduto">
+                    <div>
+                        <img src="src/img/chapa.png" alt="">
+                    </div>
+                    <div>
+                        <label for="chapa">Dog na Chapa</label>
+                        <p>Pão, Salcicha, Milho, Batata Palha, Presunto, Mussarela</p>
+                    </div>
+                </div>
+                <div class="subproduto valor">
+                    <input type="checkbox" name="chapa" id="chapa">
+                    <p>R$ 7,99</p>
+                </div>
+            </div>
+            <div class="produto">
+                <div class="subproduto">
+                    <div>
+                        <img src="src/img/molho.png" alt="">
+                    </div>
+                    <div>
+                        <label for="molho">Dog no Molho</label>
+                        <p>Pão, Salcicha, Milho, Batata Palha, Presunto, Mussarela</p>
+                    </div>
+                </div>
+                <div class="subproduto valor">
+                    <input type="checkbox" name="molho" id="molho">
+                    <p>R$ 7,99</p>
+                </div>
+            </div>
+        </section>
+        <section id="bebidas">
+            <h6>Bebidas</h6>
+            <div class="produto">
+                <div class="subproduto">
+                    <img src="src/img/mara.png" alt="">
+                    <label for="suco-mara">Suco de Maracujá - 400ml</label>
+                </div>
+                <div class="subproduto valor">
+                    <input type="checkbox" name="suco-mara" id="suco-mara">
+                    <p>R$ 5,99</p>
+                </div>
+            </div>
+            <div class="produto">
+                <div class="subproduto">
+                    <img src="src/img/caja.png" alt="">
+                    <label for="suco-caja">Suco de Cajá - 400ml</label>
+                </div>
+                <div class="subproduto valor">
+                    <input type="checkbox" name="suco-caja" id="suco-caja">
+                    <p>R$ 4,99</p>
+                </div>
+            </div>
+            <div class="produto">
+                <div class="subproduto">
+                    <img src="src/img/refri.png" alt="">
+                    <label for="refri">Refrigerante Lata - 350ml</label>
+                </div>
+                <div class="subproduto valor">
+                    <input type="checkbox" name="refri" id="refri">
+                    <p>R$ 4,99</p>
+                </div>
+            </div>
+            <div class="produto">
+                <div class="subproduto">
+                    <img src="src/img/heineken.png" alt="">
+                    <label for="heineken">Heineken Long Neck - 330ml</label>
+                </div>
+                <div class="subproduto valor">
+                    <input type="checkbox" name="heineken" id="heineken">
+                    <p>R$ 8,99</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        &copy;tasty é uma marca de SIM alimeticia Co. 2022. Todos os direitos reservados.
+    </footer>
+</body>
+
+</html>

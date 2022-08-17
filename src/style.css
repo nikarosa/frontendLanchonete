@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Raleway&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: auto;
+}
+header{
+    width: 100%;
+}
+nav{
+    height: 10vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff10a;
+    font-family: 'Dancing Script', cursive;
+}
+nav a{
+    color: #000;
+    text-decoration: none;
+}
+nav a:hover{
+    opacity: .6;
+}
+header .logo{
+    height: 10vh;
+    margin-left: 10vw;
+}
+header .cart{
+    height: 5vh;
+}
+header button{
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+main{
+    font-family: 'Raleway', sans-serif;
+    height: auto;
+    padding: 5vh;
+}
+main h6{
+    border: 1px solid #000;
+    width: 30%;
+    padding: 1vh;
+    font-size: 2em;
+    margin-top: 5vh;
+}
+.produto{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    border-bottom: 1px solid #000;
+    margin: 5vh 0;
+}
+.produto p{
+    font-size: .7em;
+}
+.produto img{
+    height: 8vh;
+}
+.subproduto{
+    display: flex;
+    align-items: center;
+    gap: 1vw;
+    width: 50%;
+}
+.valor{
+    display: flex;
+    align-items: center;
+    /* justify-content: flex-end; */
+    gap: 1vw;
+    width: 6% !important;
+}
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+    font-family: 'Dancing Script', cursive;
+    background-color: #cf240a;
+    color: #fff;
+}
