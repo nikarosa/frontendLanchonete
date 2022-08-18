@@ -62,7 +62,7 @@ function confirmarValor(){
         somaTotal = somaTotal + (7.99*qtdChapa)
         cart("Dog na Chapa", qtdChapa.value, 7.99, (7.99*qtdChapa.value))
     }
-    if(molho.checked == false){
+    if(molho.checked == true){
         somaTotal = somaTotal + (7.99*qtdMolho.value)
         cart("Dog no Molho", qtdMolho.value, 7.99, (7.99*qtdMolho.value))
     }
