@@ -24,8 +24,19 @@
     </header>
     <section class="hide" data-modalConfirm>
         <div class="message">
-            <p>O valor total do seu pedido é </p>
-            <div data-message></div>
+            <table id="tabelaPedidos" data-tabelaPedidos>
+                <thead>
+                    <tr>
+                        <td> </td>
+                        <td id="nae">Produto  </td>
+                        <td id="q">Qtd.  </td>
+                        <td id="valu">Valor Un.</td>
+                        <td id="valt">Valor Total</td>
+                    </tr>
+                </thead>
+                <br>
+            </table>
+            <p>o valor total do seu pedido é <span data-message></span></p>
             <button onclick="voltar()">confirmar</button>
         </div>
     </section>
@@ -43,6 +54,8 @@
                     </div>
                 </div>
                 <div  class="subproduto valor">
+                    <input class="qtd" type="number" name="qtd" id="qtdBomba" 
+                    placeholder="Qtd." data-qtdBomba>
                     <input type="checkbox" name="bomba" id="bomba" data-bomba>
                     <p>R$ 9,99</p>
                 </div>
@@ -58,6 +71,9 @@
                     </div>
                 </div>
                 <div class="subproduto valor">
+                    <input class="qtd" type="number" name="qtd" id="qtdFrango"
+                    placeholder="Qtd." 
+                     data-qtdFrango>
                     <input type="checkbox" name="frango" id="frango" data-frango>
                     <p>R$ 14,99</p>
                 </div>
@@ -73,6 +89,9 @@
                         </div>
                 </div>
                 <div class="subproduto valor">
+                    <input class="qtd" type="number" name="qtd" id="qtdArtesanal"
+                    placeholder="Qtd." 
+                     data-qtdArtesanal>
                     <input type="checkbox" name="artesanal" id="artesanal" data-artesanal>
                     <p>R$ 24,99</p>
                 </div>
@@ -91,6 +110,9 @@
                     </div>
                 </div>
                 <div class="subproduto valor">
+                    <input class="qtd" type="number" name="qtd" id="qtdChapa"
+                    placeholder="Qtd." 
+                     data-qtdChapa>
                     <input type="checkbox" name="chapa" id="chapa" data-chapa>
                     <p>R$ 7,99</p>
                 </div>
@@ -106,6 +128,9 @@
                     </div>
                 </div>
                 <div class="subproduto valor">
+                    <input class="qtd" type="number" name="qtd" id="qtdMolho"
+                    placeholder="Qtd." 
+                    required data-qtdMolho>
                     <input type="checkbox" name="molho" id="molho" data-molho>
                     <p>R$ 7,99</p>
                 </div>
@@ -119,6 +144,9 @@
                     <label for="suco-mara">Suco de Maracujá - 400ml</label>
                 </div>
                 <div class="subproduto valor">
+                    <input class="qtd" type="number" name="qtd" id="qtdMara"
+                    placeholder="Qtd." 
+                    required data-qtdMara>
                     <input type="checkbox" name="suco-mara" id="suco-mara" data-sucoMara>
                     <p>R$ 5,99</p>
                 </div>
@@ -129,6 +157,9 @@
                     <label for="suco-caja">Suco de Cajá - 400ml</label>
                 </div>
                 <div class="subproduto valor">
+                    <input class="qtd" type="number" name="qtd" id="qtdCaja"
+                    placeholder="Qtd." 
+                    required data-qtdCaja>
                     <input type="checkbox" name="suco-caja" id="suco-caja" data-sucoCaja>
                     <p>R$ 5,99</p>
                 </div>
@@ -139,6 +170,9 @@
                     <label for="refri">Refrigerante Lata - 350ml</label>
                 </div>
                 <div class="subproduto valor">
+                    <input class="qtd" type="number" name="qtd" id="qtdRefri"
+                    placeholder="Qtd." 
+                    required data-qtdRefri>
                     <input type="checkbox" name="refri" id="refri" data-refri>
                     <p>R$ 4,99</p>
                 </div>
@@ -149,6 +183,9 @@
                     <label for="heineken">Heineken Long Neck - 330ml</label>
                 </div>
                 <div class="subproduto valor">
+                    <input class="qtd" type="number" name="qtd" id="qtdHeineken"
+                    placeholder="Qtd." 
+                    required data-qtdHeineken>
                     <input type="checkbox" name="heineken" id="heineken" data-heineken>
                     <p>R$ 8,99</p>
                 </div>
