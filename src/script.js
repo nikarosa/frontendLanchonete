@@ -62,7 +62,7 @@ function confirmarValor(){
         cart("Artesanal de Picanha", qtdArtesanal.value, 24.99, (qtdArtesanal.value*24.99).toFixed(2))
     }
     if (chapa.checked == true) {
-        somaTotal = somaTotal + (7.99*qtdChapa)
+        somaTotal = somaTotal + (7.99*qtdChapa.value)
         cart("Dog na Chapa", qtdChapa.value, 7.99, (7.99*qtdChapa.value).toFixed(2))
     }
     if(molho.checked == true){
@@ -70,19 +70,19 @@ function confirmarValor(){
         cart("Dog no Molho", qtdMolho.value, 7.99, (7.99*qtdMolho.value).toFixed(2))
     }
     if (sucoMara.checked == true) {
-        somaTotal = somaTotal + (5.99*qtdMara)
+        somaTotal = somaTotal + (5.99*qtdMara.value)
         cart("Suco de Maracujá", qtdMara.value, 5.99, (5.99*qtdMara.value).toFixed(2))
     }
     if (sucoCaja.checked == true) {
-        somaTotal = somaTotal + (5.99*qtdCaja)
+        somaTotal = somaTotal + (5.99*qtdCaja.value)
         cart("Suco de Cajá", qtdCaja.value, 5.99, (5.99*qtdCaja.value).toFixed(2))
     }
     if (refri.checked == true) {
-        somaTotal = somaTotal + (4.99*qtdRefri)
+        somaTotal = somaTotal + (4.99*qtdRefri.value)
         cart("Refrigerante Lata", qtdRefri.value, 4.99, (4.99*qtdRefri.value).toFixed(2))
     }
     if (heineken.checked == true)  {
-        somaTotal = somaTotal + (8.99*qtdRefri)
+        somaTotal = somaTotal + (8.99*qtdHeineken.value)
         cart("Heineken Long Neck", qtdHeineken.value, 8.99, (8.99*qtdHeineken.value).toFixed(2))
     }
 
@@ -90,7 +90,6 @@ function confirmarValor(){
     modal.classList.add("modalConfirm")
 
     message.innerHTML = `R$ ${somaTotal}`
-    console.log(pedidos.rows.length);
 }
 
 function voltar(){
@@ -119,7 +118,7 @@ function voltar(){
     modal.classList.remove("modalConfirm")
     modal.classList.add("hide")
 
-    for (let i = 1; pedidos.rows.length > 0; i++){
+    for (let i = 1; (pedidos.rows.length-1) > 1; i++){
         pedidos.deleteRow(i)
     }
 
