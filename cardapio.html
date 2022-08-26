@@ -17,9 +17,11 @@
         <nav>
             <a href="index.html">inicio</a>
             <a href="#hamburguer">hamburguers</a>
-            <a href="#hotdog">hot dog</a>
             <a href="#bebidas">bebidas</a>
-            <button data-cart onclick="confirmarValor()"><img class="cart" src="src/img/cart.png" alt=""></button>
+            <div class="cart">
+                <p class="hide" data-cartValue></p>
+                <button data-cart onclick="confirmarValor()"><img class="cartIcon" src="src/img/cart.png" alt=""></button>
+            </div>
         </nav>
     </header>
     <section class="hide" data-modalConfirm>
@@ -41,164 +43,184 @@
         </div>
     </section>
     <main>
+        <section class="mheader">
+            <p>tasty</p>
+        </section>
         <section id="hamburguer">
             <h6>Hamburguers</h6>
+            <p class="psubtle">passe o mouse para ampliar a imagem</p>
+            <p class="msubtle">clique na imagem para ver a lista de ingredientes</p>
             <div class="produto">
                 <div class="subproduto">
-                    <div>
-                        <img src="src/img/xtudo.png" alt="">
+                    <div class="list">
+                        <img src="src/img/list.png" alt="">
                     </div>
                     <div>
                         <label for="misto">Misto Quente</label>
-                        <p>Pão, presunto e queijo</p>
+                        <p class="ingredientes">Pão, presunto e queijo</p>
+                    </div>
+                    <div>
+                        <img src="src/img/lanches/mistoquente.png" title="imagem meramente ilustrativa">
                     </div>
                 </div>
                 <div  class="subproduto valor">
-                    <input class="qtd" type="number" name="qtd" id="qtdMisto" 
-                    placeholder="Qtd." data-qtdMisto>
-                    <input type="checkbox" name="misto" id="misto" data-misto>
+                    <input type="checkbox" name="produto" id="misto" data-misto>
                     <p>R$ 4</p>
                 </div>
             </div>
             <div class="produto">
                 <div class="subproduto">
-                    <div>
-                        <img src="src/img/xtudo.png" alt="">
+                    <div class="list">
+                        <img src="src/img/list.png" alt="">
                     </div>
                     <div>
                         <label for="bomba">X-Bomba</label>
-                        <p>Pão, hamburguer, salsicha, presunto, queijo, ovo, alface e tomate</p>
+                        <p class="ingredientes">Pão, hamburguer, salsicha, presunto, queijo, ovo, alface e tomate</p>
+                    </div>
+                    <div>
+                        <img src="src/img/lanches/bomba.png" title="imagem meramente ilustrativa">
                     </div>
                 </div>
                 <div  class="subproduto valor">
-                    <input class="qtd" type="number" name="qtd" id="qtdBomba" 
-                    placeholder="Qtd." data-qtdBomba>
-                    <input type="checkbox" name="bomba" id="bomba" data-bomba>
+                    <input type="checkbox" name="produto" id="bomba" data-bomba>
                     <p>R$ 8</p>
                 </div>
             </div>
             <div class="produto">
                 <div class="subproduto">
-                    <div>
-                        <img src="src/img/xtudo.png" alt="">
+                    <div class="list">
+                        <img src="src/img/list.png" alt="">
                     </div>
                     <div>
                         <label for="tudo">X-Tudo</label>
-                        <p>Pão, hamburger, presunto, queijo, ovo, batata-palha, milho, bacon</p>
+                        <p class="ingredientes">Pão, hamburger, presunto, queijo, ovo, batata-palha, milho, bacon</p>
+                    </div>
+                    <div>
+                        <img src="src/img/lanches/xtudo.png" title="imagem meramente ilustrativa">
                     </div>
                 </div>
                 <div  class="subproduto valor">
-                    <input class="qtd" type="number" name="qtd" id="qtdTudo" 
-                    placeholder="Qtd." data-qtdTudo>
-                    <input type="checkbox" name="tudo" id="tudo" data-tudo>
+                    <input type="checkbox" name="produto" id="tudo" data-tudo>
                     <p>R$ 17</p>
                 </div>
             </div>
             <div class="produto">
                 <div class="subproduto">
-                    <div>
-                        <img src="src/img/xfrango.png" alt="">
+                    <div class="list">
+                        <img src="src/img/list.png" alt="">
                     </div>
                     <div>
                         <label for="frango">X-Tudo de Frango</label>
-                        <p>Pão, peito de frango, presunto, queijo, ovo, batata-palha, milho, bacon</p>
+                        <p class="ingredientes">Pão, peito de frango, presunto, queijo, ovo, batata-palha, milho, bacon</p>
+                    </div>
+                    <div>
+                        <img src="src/img/lanches/xfrango.png" title="imagem meramente ilustrativa">
                     </div>
                 </div>
                 <div class="subproduto valor">
-                    <input class="qtd" type="number" name="qtd" id="qtdFrango"
-                    placeholder="Qtd." 
-                     data-qtdFrango>
-                    <input type="checkbox" name="frango" id="frango" data-frango>
+                    <input type="checkbox" name="produto" id="frango" data-frango>
                     <p>R$ 19</p>
                 </div>
             </div>
             <div class="produto">
                 <div class="subproduto">
-                    <div>
-                        <img src="src/img/artpicanha.png" alt="">
+                    <div class="list">
+                        <img src="src/img/list.png" alt="">
                     </div>
                     <div>
                         <label for="brocado">X-Brocado</label>
-                        <p>Pão, 2 hamburguers, presunto, queijo, bacon, milho, alface, tomate, salsicha</p>
-                        </div>
+                        <p class="ingredientes">Pão, 2 hamburguers, presunto, queijo, bacon, milho, alface, tomate, salsicha</p>
+                    </div>
+                    <div>
+                        <img src="src/img/lanches/xbrocado.png" alt="">
+                    </div>
                 </div>
                 <div class="subproduto valor">
-                    <input class="qtd" type="number" name="qtd" id="qtdBrocado"
-                    placeholder="Qtd." 
-                     data-qtdBrocado>
-                    <input type="checkbox" name="brocado" id="brocado" data-brocado>
+                    <input type="checkbox" name="produto" id="brocado" data-brocado>
                     <p>R$ 25</p>
                 </div>
             </div>
         </section>
         <section id="bebidas">
             <h6>Bebidas</h6>
+            <p class="psubtle">passe o mouse para ampliar a imagem</p>
             <div class="produto">
                 <div class="subproduto">
-                    <img src="src/img/mara.png" alt="">
+                    <div class="list">
+                        <img src="src/img/list.png" alt="">
+                    </div>
                     <label for="suco-mara">Suco de Maracujá - 400ml</label>
+                    <img src="src/img/bebidas/mara.png" alt="">
                 </div>
                 <div class="subproduto valor">
-                    <input class="qtd" type="number" name="qtd" id="qtdMara" placeholder="Qtd." data-qtdMara>
-                    <input type="checkbox" name="suco-mara" id="suco-mara" data-sucoMara>
+                    <input type="checkbox" name="produto" id="suco-mara" data-sucoMara>
                     <p>R$ 6</p>
                 </div>
             </div>
             <div class="produto">
                 <div class="subproduto">
-                    <img src="src/img/caja.png" alt="">
+                    <div class="list">
+                        <img src="src/img/list.png" alt="">
+                    </div>
                     <label for="suco-laranja">Suco de Laranja - 400ml</label>
+                    <img src="src/img/bebidas/laranja.png" alt="">
                 </div>
                 <div class="subproduto valor">
-                    <input class="qtd" type="number" name="qtd" id="qtdLaranja"
-                    placeholder="Qtd." 
-                    required data-qtdCaja>
-                    <input type="checkbox" name="suco-laranja" id="suco-laranja" data-sucoLaranja>
+                    <input type="checkbox" name="produto" id="suco-laranja" data-sucoLaranja>
                     <p>R$ 6</p>
                 </div>
             </div>
             <div class="produto">
                 <div class="subproduto">
-                    <img src="src/img/caja.png" alt="">
+                    <div class="list">
+                        <img src="src/img/list.png" alt="">
+                    </div>
                     <label for="suco-limao">Suco de Limão - 400ml</label>
+                    <img src="src/img/bebidas/limao.png" alt="">
                 </div>
                 <div class="subproduto valor">
-                    <input class="qtd" type="number" name="qtd" id="qtdLimao"
-                    placeholder="Qtd." 
-                    required data-qtdLimao>
-                    <input type="checkbox" name="suco-limao" id="suco-limao" data-sucoLimao>
+                    <input type="checkbox" name="produto" id="suco-limao" data-sucoLimao>
                     <p>R$ 6</p>
                 </div>
             </div>
             <div class="produto">
                 <div class="subproduto">
-                    <img src="src/img/refri.png" alt="">
+                    <div class="list">
+                        <img src="src/img/list.png" alt="">
+                    </div>
                     <label for="refri">Refrigerante Lata - 350ml</label>
+                    <img src="src/img/bebidas/refri.png" alt="">
                 </div>
                 <div class="subproduto valor">
-                    <input class="qtd" type="number" name="qtd" id="qtdRefri"
-                    placeholder="Qtd." 
-                    required data-qtdRefri>
-                    <input type="checkbox" name="refri" id="refri" data-refri>
+                    <input type="checkbox" name="produto" id="refri" data-refri>
                     <p>R$ 5</p>
                 </div>
             </div>
             <div class="produto">
                 <div class="subproduto">
-                    <img src="src/img/heineken.png" alt="">
+                    <div class="list">
+                        <img src="src/img/list.png" alt="">
+                    </div>
                     <label for="heineken">Heineken Long Neck - 330ml</label>
+                    <img src="src/img/bebidas/heineken.png" alt="">
                 </div>
                 <div class="subproduto valor">
-                    <input class="qtd" type="number" name="qtd" id="qtdHeineken"
-                    placeholder="Qtd." 
-                    required data-qtdHeineken>
-                    <input type="checkbox" name="heineken" id="heineken" data-heineken>
+                    <input type="checkbox" name="produto" id="heineken" data-heineken>
                     <p>R$ 8</p>
                 </div>
             </div>
         </section>
-        <div class="modalFinale">
-            <button data-final class="final"  onclick="confirmarValor()" data-button>Finalizar Compra</button>
+        <div class="hide" data-finale>
+            <button class="close" onclick="close()"> x </button>
+            <div data-resume></div>
+            <div class="sub">
+                <div class="quantidade">
+                    <button id="dim" onclick="step(this)"> - </button>
+                    <input type="number" min="0" name="quantidade" id="qtd" value="0" step="1" readonly data-qtd>
+                    <button id="aum" onclick="step(this)"> + </button>
+                </div>
+                <button class="final" data-button>adicionar ao carrinho</button>
+            </div>
         </div>
     </main>
     <footer>
