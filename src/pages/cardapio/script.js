@@ -39,7 +39,7 @@ tudo.addEventListener("click", () => {
 })
 frango.addEventListener("click", () => {
     valor = 19
-    if(misto.checked == true){
+    if(frango.checked == true){
         var esseProduto = "X-Tudo de Frango"
         resume.innerHTML = `<p>${esseProduto} | R$ ${valor.toFixed(2)}`
     }
