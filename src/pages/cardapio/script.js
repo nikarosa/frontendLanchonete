@@ -23,6 +23,7 @@ var largura = window.innerWidth
 var total = 0
 var valor = 0
 var esseProduto
+var numero = pedidos.rows.length
 
 //MOSTRAR MODAL INSERIR NO CARRINHO
 function showFinale(){
@@ -140,18 +141,16 @@ function step(botao){
 document.querySelector('[data-insert]').addEventListener('click', () => {
     let essaQtd = quantidade.getAttribute('value')
     let totalI = valor*essaQtd
-    cart(esseProduto, essaQtd, valor.toFixed(2), totalI.toFixed(2))
+    cart(esseProduto, essaQtd, valor.toFixed(2).replace('.', ','), totalI.toFixed(2))
 
-    var numero = pedidos.rows.length
-    cartValue.innerText = (numero-1)
+    cartValue.innerText = (numero)
 
     total = total + totalI
 
     cartValue.classList.remove('hide')
     cartValue.classList.add('showCartValue')
     
-    document.querySelector('[data-message]').innerText = `R$ ${total.toFixed(2)}`
-    console.log(largura)
+    document.querySelector('[data-message]').innerText = `R$ ${total.toFixed(2).replace('.', ',')}`
 })
 
 //BOTAO FECHAR MODAL
@@ -161,6 +160,16 @@ fecharModal.addEventListener("click", () => {
 })
 
 // CARRINHO
+
+//EDITAR OU EXCLUIR PEDIDO
+function eraser(linha, oValor){
+    oValor = document.getElementById('valorAqui')
+    total = total - oValor.value
+    document.querySelector('[data-message]').innerText = `R$ ${total.toFixed(2).replace('.', ',')}`
+    linha.closest('tr').remove()
+    cartValue.innerText = (numero-1)
+    console.log(oValor.value);
+}
 
 //TABELA PEDIDOS
 function cart(produto, qtd, val, valt){
@@ -173,12 +182,15 @@ function cart(produto, qtd, val, valt){
     var cellQtd = linha.insertCell(2)
     var cellVal = linha.insertCell(3)
     var cellValT = linha.insertCell(4)
+    var cellEdit = linha.insertCell(5)
     
     cellCod.innerHTML = qtdLinhas;
     cellProduto.innerHTML = produto
     cellQtd.innerHTML = qtd
     cellVal.innerHTML = val
-    cellValT.innerHTML = valt
+    let vT = `<input type='number' value='${valt}' id='valorAqui' readonly></input>`
+    cellValT.innerHTML = vT
+    cellEdit.innerHTML = "<div class='edit'><button><img src='src/img/erase.png' title='apagar ítem' onclick='eraser(event.target, event.target)'></button></div>"
 
 }
 
