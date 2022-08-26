@@ -12,6 +12,7 @@
 </head>
 
 <body>
+    <!-- NAVBAR -->
     <header>
         <a href="#" class="aLogo"><img class="logo" src="src/img/icon.png" alt=""></a>
         <nav>
@@ -19,12 +20,13 @@
             <a href="#hamburguer">hamburguers</a>
             <a href="#bebidas">bebidas</a>
             <div class="cart">
+                <button data-cart><img class="cartIcon" src="src/img/cart.png" alt=""></button>
                 <p class="hide" data-cartValue></p>
-                <button data-cart onclick="confirmarValor()"><img class="cartIcon" src="src/img/cart.png" alt=""></button>
             </div>
         </nav>
     </header>
-    <section class="hide" data-modalConfirm>
+    <!-- MODAL PEDIDOS -->
+    <section class="hide" data-carrinho>
         <div class="message">
             <table id="tabelaPedidos" data-tabelaPedidos>
                 <thead>
@@ -34,14 +36,16 @@
                         <td id="q">Qtd.  </td>
                         <td id="valu">Valor Un.</td>
                         <td id="valt">Valor Total</td>
+                        <td> </td>
                     </tr>
                 </thead>
                 <br>
             </table>
             <p>o valor total do seu pedido é <span data-message></span></p>
-            <button onclick="voltar()">confirmar</button>
+            <button data-back>confirmar</button>
         </div>
     </section>
+    <!-- SEÇÃO PRINCIPAL -->
     <main>
         <section class="mheader">
             <p>tasty</p>
@@ -57,10 +61,10 @@
                     </div>
                     <div>
                         <label for="misto">Misto Quente</label>
-                        <p class="ingredientes">Pão, presunto e queijo</p>
+                        <p class="ingredientes" data-ingrediente>Pão, presunto e queijo</p>
                     </div>
                     <div>
-                        <img src="src/img/lanches/mistoquente.png" title="imagem meramente ilustrativa">
+                        <img src="src/img/lanches/mistoquente.png" title="imagem meramente ilustrativa" data-previa>
                     </div>
                 </div>
                 <div  class="subproduto valor">
@@ -75,10 +79,10 @@
                     </div>
                     <div>
                         <label for="bomba">X-Bomba</label>
-                        <p class="ingredientes">Pão, hamburguer, salsicha, presunto, queijo, ovo, alface e tomate</p>
+                        <p class="ingredientes" data-ingrediente>Pão, hamburguer, salsicha, presunto, queijo, ovo, alface e tomate</p>
                     </div>
                     <div>
-                        <img src="src/img/lanches/bomba.png" title="imagem meramente ilustrativa">
+                        <img src="src/img/lanches/bomba.png" title="imagem meramente ilustrativa" data-previa>
                     </div>
                 </div>
                 <div  class="subproduto valor">
@@ -93,10 +97,10 @@
                     </div>
                     <div>
                         <label for="tudo">X-Tudo</label>
-                        <p class="ingredientes">Pão, hamburger, presunto, queijo, ovo, batata-palha, milho, bacon</p>
+                        <p class="ingredientes" data-ingrediente>Pão, hamburger, presunto, queijo, ovo, batata-palha, milho, bacon</p>
                     </div>
                     <div>
-                        <img src="src/img/lanches/xtudo.png" title="imagem meramente ilustrativa">
+                        <img src="src/img/lanches/xtudo.png" title="imagem meramente ilustrativa" data-previa>
                     </div>
                 </div>
                 <div  class="subproduto valor">
@@ -111,10 +115,10 @@
                     </div>
                     <div>
                         <label for="frango">X-Tudo de Frango</label>
-                        <p class="ingredientes">Pão, peito de frango, presunto, queijo, ovo, batata-palha, milho, bacon</p>
+                        <p class="ingredientes" data-ingrediente>Pão, peito de frango, presunto, queijo, ovo, batata-palha, milho, bacon</p>
                     </div>
                     <div>
-                        <img src="src/img/lanches/xfrango.png" title="imagem meramente ilustrativa">
+                        <img src="src/img/lanches/xfrango.png" title="imagem meramente ilustrativa" data-previa>
                     </div>
                 </div>
                 <div class="subproduto valor">
@@ -129,10 +133,10 @@
                     </div>
                     <div>
                         <label for="brocado">X-Brocado</label>
-                        <p class="ingredientes">Pão, 2 hamburguers, presunto, queijo, bacon, milho, alface, tomate, salsicha</p>
+                        <p class="ingredientes" data-ingrediente>Pão, 2 hamburguers, presunto, queijo, bacon, milho, alface, tomate, salsicha</p>
                     </div>
                     <div>
-                        <img src="src/img/lanches/xbrocado.png" alt="">
+                        <img src="src/img/lanches/xbrocado.png" alt="imagem meramente ilustrativa" data-previa>
                     </div>
                 </div>
                 <div class="subproduto valor">
@@ -210,6 +214,7 @@
                 </div>
             </div>
         </section>
+        <!-- MODAL ADICIONAR NO CARRINHO -->
         <div class="hide" data-finale>
             <button class="close" onclick="close()"> x </button>
             <div data-resume></div>
@@ -219,10 +224,11 @@
                     <input type="number" min="0" name="quantidade" id="qtd" value="0" step="1" readonly data-qtd>
                     <button id="aum" onclick="step(this)"> + </button>
                 </div>
-                <button class="final" data-button>adicionar ao carrinho</button>
+                <button class="final" data-insert>adicionar ao carrinho</button>
             </div>
         </div>
     </main>
+    <!-- FOOTER -->
     <footer>
         <p><span>tasty</span> foi criado com fins ficticios. somente para respresentacao. por Nika Rosa.</p>
     </footer>
