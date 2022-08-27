@@ -23,7 +23,7 @@ var largura = window.innerWidth
 var total = 0
 var valor = 0
 var esseProduto
-var numero = pedidos.rows.length
+var enquanto = 0
 
 //MOSTRAR MODAL INSERIR NO CARRINHO
 function showFinale(){
@@ -143,7 +143,8 @@ document.querySelector('[data-insert]').addEventListener('click', () => {
     let totalI = valor*essaQtd
     cart(esseProduto, essaQtd, valor.toFixed(2).replace('.', ','), totalI.toFixed(2))
 
-    cartValue.innerText = (numero)
+    enquanto = enquanto + 1
+    cartValue.innerText = (enquanto)
 
     total = total + totalI
 
@@ -167,7 +168,9 @@ function eraser(linha, oValor){
     total = total - oValor.value
     document.querySelector('[data-message]').innerText = `R$ ${total.toFixed(2).replace('.', ',')}`
     linha.closest('tr').remove()
-    cartValue.innerText = (numero-1)
+
+    enquanto = enquanto - 1
+    cartValue.innerText = enquanto
     console.log(oValor.value);
 }
 
