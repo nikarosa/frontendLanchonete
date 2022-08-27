@@ -24,6 +24,7 @@ var total = 0
 var valor = 0
 var esseProduto
 var enquanto = 0
+var i = 0
 
 //MOSTRAR MODAL INSERIR NO CARRINHO
 function showFinale(){
@@ -133,7 +134,6 @@ function step(botao){
     let step = quantidade.getAttribute("step")
     let calcStep = (id == "dim") ? (step * -1) : (step * 1)
     let newValue = parseInt(value) + calcStep
-    
     quantidade.setAttribute("value", newValue)
 }
 
@@ -152,6 +152,7 @@ document.querySelector('[data-insert]').addEventListener('click', () => {
     cartValue.classList.add('showCartValue')
     
     document.querySelector('[data-message]').innerText = `R$ ${total.toFixed(2).replace('.', ',')}`
+    console.log(total);
 })
 
 //BOTAO FECHAR MODAL
@@ -168,10 +169,9 @@ function eraser(linha, oValor){
     total = total - oValor.value
     document.querySelector('[data-message]').innerText = `R$ ${total.toFixed(2).replace('.', ',')}`
     linha.closest('tr').remove()
-
     enquanto = enquanto - 1
     cartValue.innerText = enquanto
-    console.log(oValor.value);
+    console.log(total);
 }
 
 //TABELA PEDIDOS
@@ -191,6 +191,7 @@ function cart(produto, qtd, val, valt){
     cellProduto.innerHTML = produto
     cellQtd.innerHTML = qtd
     cellVal.innerHTML = val
+    i = i + 1
     let vT = `<input type='number' value='${valt}' id='valorAqui' readonly></input>`
     cellValT.innerHTML = vT
     cellEdit.innerHTML = "<div class='edit'><button><img src='src/img/erase.png' title='apagar ítem' onclick='eraser(event.target, event.target)'></button></div>"

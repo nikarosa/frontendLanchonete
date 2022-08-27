@@ -1,12 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Raleway&display=swap');
-@font-face {
-    font-family: 'Daydream';
-    src: url(../../font/daydream.ttf);
-}
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;700&family=Raleway&display=swap');
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 /* PARA TODO O BODY */
     body{
@@ -37,7 +34,7 @@
             margin: 0 5vw;
             justify-content: space-between;
             align-items: center;
-            font-family: 'Daydream';
+            font-family: 'Comfortaa';
             font-size: 1em;
             transition: .2s;
             text-transform: capitalize;
@@ -359,16 +356,19 @@ footer{
     justify-content: center;
     align-items: center;
     height: 10vh;
-    font-size: 1.5em;
+    font-size: 1em;
     width: 100%;
-    font-family: 'Daydream';
+    font-family: 'Comfortaa';
     background-color: #cf240a;
     color: #fff;
 }
 footer span{
-    -webkit-text-fill-color: #fff;
-    -webkit-text-stroke-width: .5px;
-    -webkit-text-stroke-color: #000;
+    text-shadow: 0 0 0.2em #000;
+    font-size: 1.4em;
+}
+footer a{
+    text-decoration: none;
+    color: #fff;
 }
 @media screen and (max-width: 800px) {
     .showCartValue{
@@ -420,13 +420,12 @@ footer span{
         height: auto;
     }
     .mheader{
+        color: #fff;
         display: inline;
         text-align: center;
         font-size: 3em;
-        font-family: 'Daydream';
-        -webkit-text-fill-color: #fff;
-        -webkit-text-stroke-width: 1.5px;
-        -webkit-text-stroke-color: #000;
+        font-family: 'Comfortaa';
+        text-shadow: 0 0 0.2em #000;
     }
     .message{
         width: 90vw;
@@ -483,5 +482,6 @@ footer span{
     footer{
         height: 6vh;
         font-size: .8em;
+        text-align: center;
     }
 }

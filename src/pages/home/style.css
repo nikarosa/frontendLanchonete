@@ -1,11 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Raleway&display=swap');
-@font-face {
-    font-family: 'Daydream';
-    src: url(../../font/daydream.ttf);
-}
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;700&family=Raleway&display=swap');
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 body{
     display: flex;
@@ -13,11 +11,66 @@ body{
     justify-content: space-between;
     height: auto;
 }
+/* TELA DE LOADING */
+.loading {
+    position: fixed;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    background-color: #fff;
+    z-index: 5;
+    transition: .4s ease-in-out;
+}
+svg {
+      transition: .4s ease-in-out;
+      display: block;
+      font: 18em 'Comfortaa';
+      width: auto;
+      height: auto;
+      margin: 0 auto;
+      z-index: 5;
+  }
+  
+  .text-copy {
+      fill: none;
+      stroke: white;
+      stroke-dasharray: 6% 29%;
+      stroke-width: 5px;
+      stroke-dashoffset: 0%;
+      animation: stroke-offset 5.5s infinite linear;
+  }
+  
+  .text-copy:nth-child(1){
+      stroke: #fff10a;
+      animation-delay: -1;
+  }
+  
+  .text-copy:nth-child(2){
+      stroke: #fec208;
+      animation-delay: -2s;
+  }
+  
+  .text-copy:nth-child(3){
+      stroke: #cf240a;
+      animation-delay: -3s;
+  }
+  
+  .text-copy:nth-child(4){
+      stroke: #ff2d08;
+      animation-delay: -4s;
+  }
+  
+  @keyframes stroke-offset{
+      100% {stroke-dashoffset: -35%;}
+  }
+/* HEADER  */
 header{
     display: flex;
     gap: 5vw;
     width: 100%;
     background-color: #fec208;
+    z-index: 1;
 }
 header .logo{
     height: 10vh;
@@ -26,6 +79,7 @@ header .logo{
 header .aLogo:hover{
     font-size: 1em;
 }
+/* NAVBAR */
 nav{
     height: 10vh;
     width: 95%;
@@ -33,7 +87,7 @@ nav{
     margin: 0 5vw;
     justify-content: space-between;
     align-items: center;
-    font-family: 'Daydream';
+    font-family: 'Comfortaa';
     font-size: 1em;
     transition: .2s;
     text-transform: capitalize;
@@ -46,10 +100,12 @@ nav a:hover{
     font-size: 1.5em;
     transition: .2s;
 }
+/* CONTEUDO */
 main{
     display: flex;
     flex-direction: column;
 }
+/* SLIDE DO TOPO */
 .sidebar{
     height: 30vh;
     width: 100%;
@@ -65,51 +121,136 @@ main{
     object-fit: cover;
     object-position: center center;
 }
-.content{
-    height: calc(100vh - 35vh);
+/* CONTAINER COM CONTEUDO */
+.container{
+    height: auto;
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
 }
+/* TITULO 1 */
 p.title{
-    font-family: 'Daydream' !important;
+    font-family: 'Comfortaa' !important;
     font-size: 5vw !important;
+    transform: translateY(80%);
 }
-.content span{
-    -webkit-text-fill-color: #fff;
-    -webkit-text-stroke-width: .5px;
-    -webkit-text-stroke-color: #000;
+.container span{
+    text-shadow: 0 0 0.2em #000;
+    color: #fff;
 }
-.content p{
+.container p{
     font-family: 'Raleway';
     font-size: 2vw;
 }
-.content img{
+/* IMAGENS E TEXTO  */
+.content{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    transform: translateY(20%);
+}
+/* PRIMEIRO CONTEUDO */
+.part-1{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    opacity: 0;
+    transition: .3s;
+    transform: translate3d(-5%, 0, 0);
+}
+/* SEGUNDO CONTEUDO */
+.part-2{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    opacity: 0;
+    transform: translate3d(5%, -50%, 0);
+    transition: 1s ease;
+}
+.anima1{
+    opacity: 1;
+    transition: 1s ease;
+    transform: translate3d(0, 0, 0);
+}
+.anima2{
+    opacity: 1;
+    transition: 1s ease;
+    transform: translate3d(0, -50%, 0);
+}
+/* ALTERAÇÕES QUE FUNCIONAM PRO PRIMEIRO E SEGUNDO CONTEUDO */
+.part-1 img, .part-2 img{
+    width: 90vmin;
+    height: 60vmin;
+}
+/* SEPARADOR */
+.divisor-1{
     height: 30vh;
-    transition: .2s ease-in-out;
+    width: 100%;
+    background: url(../../img/divisor/wave-home.svg);
+    background-size: cover;
+    background-position: bottom;
+    color: transparent;
+    z-index: 1;
 }
-.content img:hover{
-    height: 35vh;
-    transition: .2s ease-in-out;
+/* FOOTER  */
+.part-3{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+    background-color: #fff10a;
 }
+/* HORARIOS E SOCIAL*/
+.part-3 li::marker{
+    color: transparent;
+}
+.part-3 .ulheader, .part-3 .sheader{
+    font-size: 2em;
+    text-transform: lowercase;
+    font-family: 'Raleway';
+    font-weight: 700;
+    margin-bottom: 2vh;
+}
+.part-3 span{
+    font-family: 'Raleway';
+    color: #000;
+    text-shadow: none;
+    font-weight: 700;
+}
+.part-3 li{
+    font-family: 'Raleway';
+    font-size: 1em;
+    text-align:right;
+    width: 25vw;
+}
+.part-3 img{
+    height: 15vh;
+}
+.part-3 ul, .part-3 div{
+    transform: translateY(-20%);
+}
+/* TEXTO DO BOTTOM */
 footer{
     display: flex;
     justify-content: center;
     align-items: center;
     height: 10vh;
-    font-size: 1.5em;
+    font-size: 1em;
     width: 100%;
-    font-family: 'Daydream';
+    font-family: 'Comfortaa';
     background-color: #cf240a;
     color: #fff;
 }
 footer span{
-    -webkit-text-fill-color: #fff;
-    -webkit-text-stroke-width: .5px;
-    -webkit-text-stroke-color: #000;
+    text-shadow: 0 0 0.2em #000;
+    font-size: 1.4em;
 }
+/* RESPONSIVO TELAS MENORES QUE 800PX */
 @media screen and (max-width: 800px){
     header a.aLogo{
         display: none;
@@ -139,16 +280,16 @@ footer span{
     p.title{
         font-size: 8vw !important;
     }
-    .content{
+    .container{
         text-align: center;
     }
-    .content p{
+    .container p{
         font-size: 5vw;
     }
-    .content img{
+    .container img{
         height: 20vh;
     }
-    .content img:hover{
+    .container img:hover{
         height: 20vh;
     }
     footer{

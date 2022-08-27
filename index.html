@@ -4,41 +4,85 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="src/pages/home/style.css">
     <link rel="shortcut icon" href="src/img/favicon.png" type="image/x-icon">
     <script src="src/pages/home/script.js" defer></script>
+    <link rel="stylesheet" href="src/pages/home/style.css">
     <title>tasty</title>
 </head>
 <body>
+    <div class="loading" data-loading>
+        <svg viewBox="0 0 960 300" class="any" data-svg>
+          <symbol id="s-text">
+            <text text-anchor="middle" x="50%" y="80%">tasty</text>
+          </symbol>
+      
+          <g class = "g-ants">
+            <use xlink:href="#s-text" class="text-copy"></use>
+            <use xlink:href="#s-text" class="text-copy"></use>
+            <use xlink:href="#s-text" class="text-copy"></use>
+            <use xlink:href="#s-text" class="text-copy"></use>
+          </g>
+        </svg>
+      </div>
     <header>
         <a href="#" class="aLogo"><img class="logo" src="src/img/icon.png" alt=""></a>
         <nav>
             <a href="cardapio.html">cardapio</a>
             <a href="sobre.html">quem somos</a>
             <a href="contato.html">contatos</a>
-            <a href="#">trabalhe conosco</a>
+            <a href="candidate.html">trabalhe conosco</a>
         </nav>
     </header>
     <main>
         <section class="sidebar" data-sidebar>
             <div class="slide" data-slide>
-                <img src="src/img/slide-1/1.png" alt="">
-                <img src="src/img/slide-1/2.png" alt="">
-                <img src="src/img/slide-1/3.png" alt="">
-                <img src="src/img/slide-1/4.png" alt="">
-                <img src="src/img/slide-1/5.png" alt="">
+                <img src="src/img/slide-1/1.jpg" alt="">
+                <img src="src/img/slide-1/2.jpg" alt="">
+                <img src="src/img/slide-1/3.jpg" alt="">
+                <img src="src/img/slide-1/4.jpg" alt="">
+                <img src="src/img/slide-1/5.jpg" alt="">
             </div>
         </section>
-        <section class="content" data-content>
+        <section class="container" data-content>
+            <div>
                 <p class="title">a <span>tasty</span> esta de cara nova</p>
+            </div>
+            <div class="content">
+            <div class="part-1" data-part1>
                 <p>novos lanches e bebidas pra você aproveitar</p>
-                <img src="src/img/favicon.png" alt="">
+                <img src="src/img/person-1.png" alt="">
+            </div>
+            <div class="part-2" data-part2>
+                <img src="src/img/person-2.png" alt="">
                 <p>tudo com o mais alto padrão de qualidade e sabor!</p>
                 <p>peça já o seu!</p>
+            </div>
+        </div>
+        <div class="divisor-1">qqr</div>
+            <div class="part-3">
+                <ul>
+                    <li class="ulheader">Horário de Funcionamento</li>
+                    <li><span>segunda</span>   fechado</li>
+                    <li><span>terça</span>   11h - 00h</li>
+                    <li><span>quarta</span>  11h - 00h</li>
+                    <li><span>quinta</span>  11h - 03h</li>
+                    <li><span>sexta</span>   11h - 03h</li>
+                    <li><span>sábado</span>  11h - 03h</li>
+                    <li><span>domingo</span> 11h - 00h</li>
+                </ul>
+                <div>
+                    <p class="sheader">redes sociais</p>
+                    <div>
+                        <a href="https://www.instagram.com" target="_blank"><img src="src/img/igico.png" title="instagram"></a>
+                        <a href="https://www.twitter.com" target="_blank"><img src="src/img/ttico.png" title="twitter"></a>
+                        <a href="https://www.facebook.com" target="_blank"><img src="src/img/fbico.png" title="facebook"></a>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
     <footer>
-        <p><span>tasty</span> foi criado com fins ficticios. somente para respresentacao. por Nika Rosa.</p>
+        <p><span>tasty</span> foi criado com fins fictícios. somente para respresentação. por Nika Rosa.</p>
     </footer>
 </body>
 </html>

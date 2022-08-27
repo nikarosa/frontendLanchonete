@@ -1,8 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Raleway&display=swap');
-@font-face {
-    font-family: 'Daydream';
-    src: url(../../font/daydream.ttf);
-}
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;700&family=Raleway&display=swap');
 *{
     margin: 0;
     padding: 0;
@@ -30,7 +26,7 @@ nav{
     justify-content: space-between;
     align-items: center;
     background-color: #fff10a;
-    font-family: 'Daydream';
+    font-family: 'Comfortaa';
     font-size: 1em;
     transition: .2s;
 }
@@ -49,7 +45,7 @@ footer{
     height: 10vh;
     font-size: 1.5em;
     width: 100%;
-    font-family: 'Daydream';
+    font-family: 'Comfortaa';
     background-color: #cf240a;
     color: #fff;
 }
