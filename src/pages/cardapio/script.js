@@ -26,13 +26,18 @@ var valor = 0
 var esseProduto
 var enquanto = 0
 var i
-// var nomeProduto
-// var valorDesse
+var nomeProduto = []
+var valorDesse = []
+var valorUnit = []
 
 //MOSTRAR MODAL INSERIR NO CARRINHO
 function showFinale(){
     modalFinale.classList.remove('hide')
     modalFinale.classList.add('finale')
+}
+function hideFinale(){
+    modalFinale.classList.remove('finale')
+    modalFinale.classList.add('hide')
 }
 
 //PRODUTOS
@@ -48,83 +53,133 @@ if(largura <= 800){
 
 //SELECIONAR PRODUTO
 misto.addEventListener("click", () => {
-    showFinale()
     valor = 4
-    if(misto.checked == true){
+    if(misto.checked){
+        showFinale()
         esseProduto = "Misto Quente"
         resume.innerHTML = `<p>${esseProduto} | R$ ${valor.toFixed(2)}`
+        document.querySelector('.misto').style.background = 'radial-gradient(#fff, #fec208)'
+    }
+    if(misto.checked == false){
+        hideFinale()
+        document.querySelector('.misto').style.background = '#cf240a'
     }
 })
 bomba.addEventListener("click", () => {
-    showFinale()
     valor = 8
-    if(bomba.checked == true){
+    if(bomba.checked){
+        showFinale()
         esseProduto = "X-Bomba"
         resume.innerHTML = `<p>${esseProduto} | R$ ${valor.toFixed(2)}`
+        document.querySelector('.bomba').style.background = 'radial-gradient(#fff, #fec208)'
+    }
+    if(bomba.checked == false){
+        hideFinale()
+        document.querySelector('.bomba').style.background = '#cf240a'
     }
 })
 tudo.addEventListener("click", () => {
-    showFinale()
     valor = 17
-    if(tudo.checked == true){
+    if(tudo.checked){
+        showFinale()
         esseProduto = "X-Tudo"
         resume.innerHTML = `<p>${esseProduto} | R$ ${valor.toFixed(2)}`
+        document.querySelector('.tudo').style.background = 'radial-gradient(#fff, #fec208)'
+    }
+    if(tudo.checked == false){
+        hideFinale()
+        document.querySelector('.tudo').style.background = '#cf240a'
     }
 })
 frango.addEventListener("click", () => {
-    showFinale()
     valor = 19
-    if(frango.checked == true){
+    if(frango.checked){
+        showFinale()
         esseProduto = "X-Tudo de Frango"
         resume.innerHTML = `<p>${esseProduto} | R$ ${valor.toFixed(2)}`
+        document.querySelector('.frango').style.background = 'radial-gradient(#fff, #fec208)'
+    }
+    if(frango.checked == false){
+        hideFinale()
+        document.querySelector('.frango').style.background = '#cf240a'
     }
 })
 brocado.addEventListener("click", () => {
-    showFinale()
     valor = 25
-    if(brocado.checked == true){
+    if(brocado.checked){
+        showFinale()
         esseProduto = "X-Brocado"
         resume.innerHTML = `<p>${esseProduto} | R$ ${valor.toFixed(2)}`
+        document.querySelector('.brocado').style.background = 'radial-gradient(#fff, #fec208)'
+    }
+    if(brocado.checked == false){
+        hideFinale()
+        document.querySelector('.brocado').style.background = '#cf240a'
     }
 })
 mara.addEventListener("click", () => {
-    showFinale()
     valor = 6
-    if(mara.checked == true){
+    if(mara.checked){
+        showFinale()
         esseProduto = "Suco de Maracujá"
         resume.innerHTML = `<p>${esseProduto} | R$ ${valor.toFixed(2)}`
+        document.querySelector('.mara').style.background = 'radial-gradient(#fff, #fec208)'
+    }
+    if(mara.checked == false){
+        hideFinale()
+        document.querySelector('.mara').style.background = '#cf240a'
     }
 })
 laranja.addEventListener("click", () => {
-    showFinale()
     valor = 6
-    if(laranja.checked == true){
+    if(laranja.checked){
+        showFinale()
         esseProduto = "Suco de Laranja"
         resume.innerHTML = `<p>${esseProduto} | R$ ${valor.toFixed(2)}`
+        document.querySelector('.laranja').style.background = 'radial-gradient(#fff, #fec208)'
+    }
+    if(laranja.checked == false){
+        hideFinale()
+        document.querySelector('.laranja').style.background = '#cf240a'
     }
 })
 limao.addEventListener("click", () => {
-    showFinale()
     valor = 6
-    if(limao.checked == true){
+    if(limao.checked){
+        showFinale()
         esseProduto = "Suco de Limão"
         resume.innerHTML = `<p>${esseProduto} | R$ ${valor.toFixed(2)}`
+        document.querySelector('.limao').style.background = 'radial-gradient(#fff, #fec208)'
+    }
+    if(limao.checked == false){
+        hideFinale()
+        document.querySelector('.limao').style.background = '#cf240a'
     }
 })
 refri.addEventListener("click", () => {
-    showFinale()
     valor = 5
-    if(refri.checked == true){
+    if(refri.checked){
+        showFinale()
         esseProduto = "Refrigerante Lata"
         resume.innerHTML = `<p>${esseProduto} | R$ ${valor.toFixed(2)}`
+        document.querySelector('.refri').style.background = 'radial-gradient(#fff, #fec208)'
+    }
+    if(refri.checked == false){
+        hideFinale()
+        document.querySelector('.refri').style.background = '#cf240a'
     }
 })
 heineken.addEventListener("click", () => {
-    showFinale()
     valor = 8
-    if(heineken.checked == true){
+    if(heineken.checked){
+        showFinale()
         esseProduto = "Heineken Long Neck"
         resume.innerHTML = `<p>${esseProduto} | R$ ${valor.toFixed(2)}`
+        document.querySelector('.heineken').style.background = 'radial-gradient(#fff, #fec208)'
+    }
+    if(heineken.checked == false){
+        hideFinale()
+        document.querySelector('.heineken').style.background = '#cf240a'
     }
 })
 
@@ -167,27 +222,39 @@ fecharModal.addEventListener("click", () => {
 // CARRINHO
 
 //EDITAR OU EXCLUIR PEDIDO
-function preencheTabela(nomeProduto, valorUnit, valorDesse){
+function preencheTabela(nome, unit, desse){
+    let j = 0
+    for(let a = 1; a < pedidos.rows.length; a++){
+        j++
+    }
+    nomeProduto[j] = nome
+    valorDesse[j] = desse
+    valorUnit[j] = unit
+    
+    console.log(nomeProduto, valorDesse, valorUnit);
+    
     for(let c = 1; c < pedidos.rows.length; c++){
-        pedidos.rows[c].cells[5].onclick = () => {
-            i = this.rowIndex
-            if(confirm(`Deseja excluir ${nomeProduto} do carrinho?`)){
-                total = total - valorDesse
+
+        pedidos.rows[j].cells[5].onclick = () => {
+            if(confirm(`Deseja excluir ${nomeProduto[j]} do carrinho?`)){
+                total = total - valorDesse[j]
                 valorTotal.innerText = `R$ ${total.toFixed(2).replace('.', ',')}`
-                pedidos.deleteRow(c)
+                pedidos.deleteRow(j)
                 enquanto = enquanto - 1
                 cartValue.innerText = enquanto
+                j--
             }
         }
-        pedidos.rows[c].cells[6].onclick = () => {
-            if(confirm(`Deseja alterar a quantidade de ${nomeProduto}`)){
+        pedidos.rows[j].cells[6].onclick = () => {
+            if(confirm(`Deseja alterar a quantidade de ${nomeProduto[c]}`)){
                 let qtdAlt =  parseInt(prompt('Digite a nova quantidade:'))
                 console.log(qtdAlt);
-                let valorAlterado = valorUnit * qtdAlt
-                pedidos.rows[c].cells[2].innerHTML = qtdAlt
-                pedidos.rows[c].cells[4].innerHTML = valorAlterado.toFixed(2).replace('.', ',')
+                let valorAlterado = parseInt(valorUnit[j]) * qtdAlt
+                pedidos.rows[j].cells[2].innerHTML = qtdAlt
+                pedidos.rows[j].cells[4].innerHTML = valorAlterado.toFixed(2).replace('.', ',')
 
-                valorTotal.innerText = `R$ ${((total - valorUnit) + valorAlterado).toFixed(2).replace('.', ',')}`
+                valorTotal.innerText = `R$ ${((total - parseInt(valorUnit[c])) + valorAlterado).toFixed(2).replace('.', ',')}`
+                qtdAlt = 0
             }
         }
     }
@@ -215,7 +282,7 @@ function cart(produto, qtd, val, valt){
     cellErase.innerHTML = "<div class='edit'><button><img src='src/img/erase.png' title='apagar ítem'></button></div>"
     cellEdit.innerHTML = "<div class='edit'><button><img src='src/img/edit.png' title='apagar ítem'></button></div>"
 
-    preencheTabela(produto, valt)
+    preencheTabela(produto, val, valt)
 
 }
 

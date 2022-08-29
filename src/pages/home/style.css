@@ -234,6 +234,9 @@ p.title{
 .part-3 ul, .part-3 div{
     transform: translateY(-20%);
 }
+.part-3 a{
+    border: none;
+}
 /* TEXTO DO BOTTOM */
 footer{
     display: flex;
@@ -249,6 +252,10 @@ footer{
 footer span{
     text-shadow: 0 0 0.2em #000;
     font-size: 1.4em;
+}
+footer a{
+    text-decoration: none;
+    color: #fff;
 }
 /* RESPONSIVO TELAS MENORES QUE 800PX */
 @media screen and (max-width: 800px){
@@ -292,8 +299,48 @@ footer span{
     .container img:hover{
         height: 20vh;
     }
+    .part-1 img, .part-2 img{
+        width: 95vmin;
+        height: 60vmin;
+    }
+    .part-2{
+        transform: translate3d(0, -5%, 0);
+    }
+    .divisor-1{
+        transform: translateY(1%);
+    }
+    .part-3 div{
+        display: flex;
+        flex-flow: column;
+        transform: translateY(5%);
+    }
+    .part-3 div img{
+        height: 8vh;
+    }
+    .social{
+        width: 50%;
+    }
+    .part-3 ul{
+        width: 50%;
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        transform: translateY(5%);
+    }
+    .part-3 li{
+        font-size: 1em;
+        width: 100%;
+    }
+    .part-3 .ulheader, .part-3 .sheader{
+        font-size: 1em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
     footer{
         height: 6vh;
         font-size: .8em;
+        text-align: center;
     }
 }

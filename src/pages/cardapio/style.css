@@ -6,12 +6,12 @@
     scroll-behavior: smooth;
 }
 /* PARA TODO O BODY */
-    body{
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        height: auto;
-    }
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: auto;
+}
 body::-webkit-scrollbar{
     width: .7vw;
 }
@@ -141,9 +141,15 @@ main{
         font-size: 1.5em !important;
     }
     input[type='checkbox']{
-        height: 17px;
-        width: 17px;
-        cursor: pointer;
+        display: none;
+    }
+    .thischeck{
+        width: 2.5vmin;
+        height: 2.5vmin;
+        background: #cf240a;
+        border: 2px solid #cf240a;
+        border-radius: 5px;
+        -webkit-text-fill-color: transparent;
     }
     label{
         cursor: pointer;
@@ -319,6 +325,7 @@ main h6{
     align-self: center;
     justify-content: space-between;
     align-items: center;
+    transition: .2s ease-in-out;
 }
 .finale .sub{
     display: flex;
@@ -419,6 +426,9 @@ footer a{
     [data-resume]{
         margin-top: 2vh;
         font-size: 1em;
+    }
+    .edit{
+        width: 5vmin !important;
     }
     .final{
         width: 70vw;
