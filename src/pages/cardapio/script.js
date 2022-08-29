@@ -3,6 +3,7 @@ var quantidade = document.querySelector('[data-qtd]')
 var check = document.getElementsByName('produto')
 var modalFinale = document.querySelector('[data-finale]')
 var cartValue = document.querySelector('[data-cartValue]')
+var valorTotal = document.querySelector('[data-message]')
 
 var resume = document.querySelector('[data-resume]')
 var misto = document.querySelector('[data-misto]')
@@ -24,7 +25,9 @@ var total = 0
 var valor = 0
 var esseProduto
 var enquanto = 0
-var i = 0
+var i
+// var nomeProduto
+// var valorDesse
 
 //MOSTRAR MODAL INSERIR NO CARRINHO
 function showFinale(){
@@ -151,8 +154,8 @@ document.querySelector('[data-insert]').addEventListener('click', () => {
     cartValue.classList.remove('hide')
     cartValue.classList.add('showCartValue')
     
-    document.querySelector('[data-message]').innerText = `R$ ${total.toFixed(2).replace('.', ',')}`
-    console.log(total);
+    valorTotal.innerText = `R$ ${total.toFixed(2).replace('.', ',')}`
+    alert(`${esseProduto} adicionado ao carrinho`)
 })
 
 //BOTAO FECHAR MODAL
@@ -164,14 +167,30 @@ fecharModal.addEventListener("click", () => {
 // CARRINHO
 
 //EDITAR OU EXCLUIR PEDIDO
-function eraser(linha, oValor){
-    oValor = document.getElementById('valorAqui')
-    total = total - oValor.value
-    document.querySelector('[data-message]').innerText = `R$ ${total.toFixed(2).replace('.', ',')}`
-    linha.closest('tr').remove()
-    enquanto = enquanto - 1
-    cartValue.innerText = enquanto
-    console.log(total);
+function preencheTabela(nomeProduto, valorUnit, valorDesse){
+    for(let c = 1; c < pedidos.rows.length; c++){
+        pedidos.rows[c].cells[5].onclick = () => {
+            i = this.rowIndex
+            if(confirm(`Deseja excluir ${nomeProduto} do carrinho?`)){
+                total = total - valorDesse
+                valorTotal.innerText = `R$ ${total.toFixed(2).replace('.', ',')}`
+                pedidos.deleteRow(c)
+                enquanto = enquanto - 1
+                cartValue.innerText = enquanto
+            }
+        }
+        pedidos.rows[c].cells[6].onclick = () => {
+            if(confirm(`Deseja alterar a quantidade de ${nomeProduto}`)){
+                let qtdAlt =  parseInt(prompt('Digite a nova quantidade:'))
+                console.log(qtdAlt);
+                let valorAlterado = valorUnit * qtdAlt
+                pedidos.rows[c].cells[2].innerHTML = qtdAlt
+                pedidos.rows[c].cells[4].innerHTML = valorAlterado.toFixed(2).replace('.', ',')
+
+                valorTotal.innerText = `R$ ${((total - valorUnit) + valorAlterado).toFixed(2).replace('.', ',')}`
+            }
+        }
+    }
 }
 
 //TABELA PEDIDOS
@@ -185,16 +204,18 @@ function cart(produto, qtd, val, valt){
     var cellQtd = linha.insertCell(2)
     var cellVal = linha.insertCell(3)
     var cellValT = linha.insertCell(4)
-    var cellEdit = linha.insertCell(5)
+    var cellErase = linha.insertCell(5)
+    var cellEdit = linha.insertCell(6)
     
     cellCod.innerHTML = qtdLinhas;
     cellProduto.innerHTML = produto
     cellQtd.innerHTML = qtd
     cellVal.innerHTML = val
-    i = i + 1
-    let vT = `<input type='number' value='${valt}' id='valorAqui' readonly></input>`
-    cellValT.innerHTML = vT
-    cellEdit.innerHTML = "<div class='edit'><button><img src='src/img/erase.png' title='apagar ítem' onclick='eraser(event.target, event.target)'></button></div>"
+    cellValT.innerHTML = valt
+    cellErase.innerHTML = "<div class='edit'><button><img src='src/img/erase.png' title='apagar ítem'></button></div>"
+    cellEdit.innerHTML = "<div class='edit'><button><img src='src/img/edit.png' title='apagar ítem'></button></div>"
+
+    preencheTabela(produto, valt)
 
 }
 

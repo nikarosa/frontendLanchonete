@@ -12,6 +12,16 @@
         justify-content: space-between;
         height: auto;
     }
+body::-webkit-scrollbar{
+    width: .7vw;
+}
+body::-webkit-scrollbar-track{
+    background: #fff;
+}
+body::-webkit-scrollbar-thumb{
+    background: #fff10a;
+    border-radius: 10px;
+}
 /* HEADER */
     header{
         display: flex;
@@ -180,9 +190,10 @@ main{
 /* MODAL INSERIR NO CARRINHO */
 /* MODAL CARRINHO */
 /* TABELA PEDIDOS */
-#valorAqui{
+.valora{
     background: none;
     border: none;
+    outline: none;
     font-family: 'Raleway', sans-serif;
     font-size: 1em;
     width: 5vw;
@@ -235,12 +246,22 @@ main h6{
     flex-direction: column;
     width: 50%;
     border-radius: 5px;
-    height: auto;
+    min-height: 40vh;
+    max-height: 90vh;
+    overflow-y:  scroll;
     padding: 2vh;
     font-size: 1em;
     font-family: 'Raleway', sans-serif;
     background-color: #fec208;
+    scroll-behavior: smooth;
     z-index: 3;
+}
+.message::-webkit-scrollbar{
+    width: .7vw;
+}
+.message::-webkit-scrollbar-thumb{
+    border-radius: 10px;
+    background: #fff10a;
 }
 .messsage table{
     text-align: center;
